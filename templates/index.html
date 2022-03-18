@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <nav class="navbar navbar-light bg-light d-flex">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Book A Room</span>
+      </div>
+      <form class="container-fluid justify-content-start">
+        <button class="btn btn-outline-success me-2" type="button">Sign In</button>
+      </form>
+    </nav>
+<div class="row">
+    {% for hostel in hostel %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src=" {{hostel.image}} " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> {{hostel.name}} </h5>
+              <p class="card-text">Book for yourself the best hostels and rooms near Karatina University. Discounted price for first comers.</p>
+              <p class="card-text"> {{hostel.location}}, vacancy {{hostel.vacancy}}, Ksh{{hostel.price}} </p>
+              <a href="#" class="btn btn-primary">Book a Room</a>
+              <a href="#" class="btn btn-primary">Negotiate</a>
+            </div>
+          </div>
+    </div>
+{% endfor %}
+</div>
+
+
+</div>
+
+
+{%endblock%}
